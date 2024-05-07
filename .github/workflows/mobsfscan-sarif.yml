@@ -1,4 +1,4 @@
-name: mobsfscan sarif
+name: mobsfscan sarif report
 on:
   workflow_dispatch
 
@@ -12,7 +12,8 @@ jobs:
     - name: mobsfscan
       uses: MobSF/mobsfscan@main
       with:
-        args: '. --sarif --output results.sarif || true'
+        # scans only java code into app folder
+        args: './app --sarif --output results.sarif || true'
     - name: Upload mobsfscan report
       uses: github/codeql-action/upload-sarif@v2
       with:
