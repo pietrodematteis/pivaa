@@ -15,9 +15,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run MobSF Analysis
-        uses: fundacaocerti/mobsf-action@v1.7.1
+        #uses: fundacaocerti/mobsf-action@v1.7.1
+        uses: smk5797/mobsf-action@v1.7.15
         env:
-          INPUT_FILE_NAME: ./apks/pivaa.apk
+          INPUT_FILE_NAME: apks/pivaa.apk
           SCAN_TYPE: apk
           OUTPUT_FILE_NAME: mobsf-report
 
