@@ -16,8 +16,8 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: gradle
-    - name: Grant execute permission
-      run: chmod +x /home/runner/.gradle/wrapper/dists/gradle-4.1-all/
+    - name: Grant write permission to folder
+      run: chmod +w /home/runner/.gradle/wrapper/dists/
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
