@@ -18,3 +18,14 @@ jobs:
       uses: github/codeql-action/upload-sarif@v2
       with:
         sarif_file: results.sarif
+        
+    - name: mobsfscan-json
+      uses: MobSF/mobsfscan@main
+      with:
+        # scans only java code into app folder
+        args: './app --json --output results.json || true'        
+    - name: Upload MobSF Analysis JSON Result
+        uses: actions/upload-artifact@v2
+        with:
+          name: results.json
+          path: results.json
